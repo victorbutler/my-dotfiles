@@ -14,9 +14,14 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # exa
-EXA_BASE="--all --long --git --octal-permissions --no-permissions --header --no-user --icons --color-scale"
+EXA_BASE="--all --long --git --ignore-glob \"node_modules*|.git*\" --octal-permissions --no-permissions --header --no-user --icons --color-scale"
 
 alias ll="exa $EXA_BASE"
 alias lll="exa $EXA_BASE --tree"
 alias lll2="exa $EXA_BASE --tree --level 2"
 alias lll3="exa $EXA_BASE --tree --level 3"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

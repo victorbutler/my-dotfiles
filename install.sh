@@ -16,6 +16,11 @@ if [ ! -f /bin/zsh ]; then
     sudo chsh -s /bin/zsh $(whoami)
 fi
 
+# Install nvm
+if [ ! -d $HOME/.nvm ]; then
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+fi
+
 # Set up oh-my-zsh
 if [ ! -d $HOME/.oh-my-zsh ] && [ -f /bin/zsh ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
