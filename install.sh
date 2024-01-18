@@ -1,11 +1,16 @@
 #!/bin/bash
 set -eux
 
+# Install exa if not present
+if [ ! -f /usr/bin/exa ]; then
+    sudo apt install exa -y
+fi
+
 # Install ZSH if not present
 if [ ! -f /bin/zsh ]; then
     sudo apt install zsh -y
+    sudo chsh -s /bin/zsh $(whoami)
 fi
-sudo chsh -s /bin/zsh $(whoami)
 
 # Set up oh-my-zsh
 if [ ! -d $HOME/.oh-my-zsh ] && [ -f /bin/zsh ]; then
