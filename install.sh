@@ -44,6 +44,12 @@ if [ ! -d $HOME/.oh-my-zsh ] && [ -f /bin/zsh ]; then
     # sed -i -e 's#plugins=(git)#plugins=(git node npm dotenv zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-npm-scripts-autocomplete)#g' $HOME/.zshrc
 
 
-    # cp powerlevel10k/.p10k.zsh $HOME/.p10k.zsh
+    cp powerlevel10k/.p10k.zsh $HOME/.p10k.zsh
     cp zsh/.zshrc $HOME/.zshrc
 fi
+
+# Install Crush CLI from CharmBracelet
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+sudo apt update && sudo apt install crush

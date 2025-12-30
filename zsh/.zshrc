@@ -14,7 +14,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # exa
-EXA_BASE="--all --long --git --ignore-glob \"node_modules*|.git*\" --octal-permissions --no-permissions --header --no-user --icons --color-scale"
+EXA_BASE="--all --long --ignore-glob \"node_modules*|.git*\" --octal-permissions --no-permissions --header --no-user --icons --color-scale"
 
 alias ll="exa $EXA_BASE"
 alias lll="exa $EXA_BASE --tree"
