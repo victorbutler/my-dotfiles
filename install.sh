@@ -3,10 +3,10 @@ set -eux
 
 # Install exa if not present
 if [ ! -f $HOME/bin/exa ]; then
-    curl -LO https://github.com/ogham/exa/releases/download/v0.10.0/exa-linux-x86_64-v0.10.0.zip
-    unzip -j exa-linux-x86_64-v0.10.0.zip bin/exa -d $HOME/bin
+    curl -LO https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
+    unzip -j exa-linux-x86_64-v0.10.1.zip bin/exa -d $HOME/bin
     chmod 755 $HOME/bin/exa
-    rm -f exa-linux-x86_64-v0.10.0.zip
+    rm -f exa-linux-x86_64-v0.10.1.zip
     sed -i "s#^alias ll=.*##" $HOME/.bashrc
 fi
 
